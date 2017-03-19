@@ -10,5 +10,5 @@ import Foundation
 
 enum JSONDecodeError: Error {
     case invalidFormat(json: Any)
-    case missongValue(key: String, actualValue: Any?)
+    case missingValue(key: String, actualValue: Any?)
 }

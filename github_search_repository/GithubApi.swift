@@ -17,10 +17,6 @@ final class GithubApi {
         // GithubAPIが要求する連想型
         typealias Response = SearchResponse<Repository>
         
-        var httpMethod: HttpMethod {
-            return .get
-        }
-        
         var path: String {
             return "/search/repositories"
         }
@@ -34,10 +30,6 @@ final class GithubApi {
         
         let keyword: String
         typealias Response = SearchResponse<User>
-        
-        var httpMethod: HttpMethod {
-            return .get
-        }
         
         var path: String {
             return "search/users"

@@ -51,11 +51,10 @@ struct GithubApiError: JSONDecodable, Error {
         }
         
         let fieldErrorsObj = dictionary["errors"] as? [Any] ?? []
-        let errors = try fieldErrorsObj.map {
-            return try FieldError(json: $0)
-        }
         
         self.message = message
-        self .errors = errors
+        self .errors = try fieldErrorsObj.map {
+            return try FieldError(json: $0)
+        }
     }
 }

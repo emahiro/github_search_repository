@@ -23,6 +23,10 @@ extension GithubRequest {
         return URL(string: "https://api.github.com")!
     }
     
+    var httpMethod: HttpMethod {
+        return .get
+    }
+    
     func buildUrlRequest() -> URLRequest {
         let url = baseURL.appendingPathComponent(path)
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)

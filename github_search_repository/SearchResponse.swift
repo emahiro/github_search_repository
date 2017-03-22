@@ -27,11 +27,10 @@ struct SearchResponse<Item: JSONDecodable>: JSONDecodable {
             throw JSONDecodeError.missingValue(key: "items", actualValue: dictionary["items"])
         }
         
-        let items = try itemsObj.map {
-            return try Item(json: $0)
-        }
         
         self.totalCount = totalCount
-        self.items = items
+        self.items = try itemsObj.map {
+            return try Item(json: $0)
+        }
     }
 }

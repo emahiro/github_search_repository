@@ -1,2 +1,3 @@
 # github_search_repository
-githubのsearchAPIを使ったリポジトリ検索CLI
+githubのsearchAPIを使ったリポジトリ検索CLI  
+Swift実践入門を参考に開発
